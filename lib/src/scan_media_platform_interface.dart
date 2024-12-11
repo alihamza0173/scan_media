@@ -8,11 +8,11 @@ abstract class ScanMediaPlatform extends PlatformInterface {
 
   static final Object _token = Object();
 
-  static ScanMediaPlatform _instance = MediaScanner();
+  static ScanMediaPlatform _instance = ScanMediaMethodChannel();
 
   /// The default instance of [ScanMediaPlatform] to use.
   ///
-  /// Defaults to [MediaScanner].
+  /// Defaults to [ScanMediaMethodChannel].
   static ScanMediaPlatform get instance => _instance;
 
   /// Platform-specific implementations should set this with their own
@@ -23,7 +23,7 @@ abstract class ScanMediaPlatform extends PlatformInterface {
     _instance = instance;
   }
 
-  Future<String?> loadMedia() {
+  Future<void> loadMedia(String path) {
     throw UnimplementedError('platformVersion() has not been implemented.');
   }
 }

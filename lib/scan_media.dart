@@ -5,10 +5,10 @@
 // platforms in the `pubspec.yaml` at
 // https://flutter.dev/to/pubspec-plugin-platforms.
 
-import 'scan_media_platform_interface.dart';
+import 'src/scan_media_platform_interface.dart';
 
 class ScanMedia {
-  Future<String?> getPlatformVersion() {
-    return ScanMediaPlatform.instance.loadMedia();
+  Future<void> scanMedia(String path) {
+    return ScanMediaPlatform.instance.loadMedia(path);
   }
 }
