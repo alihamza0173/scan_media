@@ -1,18 +1,53 @@
-# scan_media
 
-A new Flutter plugin project.
+# Scan Media
 
-## Getting Started
+The `scan_media` plugin is designed for Android devices to refresh and rescan media files (like images, videos, and other media) in the gallery. This library helps you refresh the gallery after saving media like photos and videos. You need to do this to make your photo/video show in the gallery without rebooting your phone.
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/to/develop-plugins),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+## Features
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- **Refresh Gallery**: Trigger a scan to refresh the gallery after adding or modifying media files like photos and videos.
+- **Android Only**: This plugin works only on Android devices.
+- **Simple API**: Easy-to-use API for triggering the media scan operation.
 
-The plugin project was generated without specifying the `--platforms` flag, no platforms are currently supported.
-To add platforms, run `flutter create -t plugin --platforms <platforms> .` in this directory.
-You can also find a detailed instruction on how to add platforms in the `pubspec.yaml` at https://flutter.dev/to/pubspec-plugin-platforms.
+## Installation
+
+To use the `scan_media` plugin, add it to your `pubspec.yaml` file:
+
+```yaml
+  scan_media:
+    git:
+      url: https://github.com/alihamza0173/scan_media
+      ref: main
+``` 
+
+Then, run the following command to fetch the package:
+
+```dart
+flutter pub get
+```
+
+## Usage
+To use the plugin in your Dart file, import it:
+```dart
+import 'package:scan_media/scan_media.dart';
+```
+
+## Scan Media
+After saving a photo or video, you can use the `scan` method to refresh the gallery and make your media appear:
+```dart
+ScanMedia scanMedia = ScanMedia();
+
+// Trigger a scan for a given media path
+await scanMedia.scan('/path/to/media');
+```
+
+## Error Handling
+If an error occurs (e.g., invalid path or platform issues), an error will be thrown. Make sure to handle errors properly:
+
+```dart
+try {
+  await scanMedia.scan('/path/to/media');
+} catch (e) {
+  print('Error scanning media: $e');
+}
+```
