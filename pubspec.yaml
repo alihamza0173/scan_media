@@ -1,11 +1,11 @@
 name: scan_media
 description: "A new Flutter plugin project."
 version: 0.0.1
-homepage:
+homepage: https://github.com/alihamza0173/scan_media.git
 
 environment:
   sdk: ^3.5.4
-  flutter: '>=3.3.0'
+  flutter: ">=3.3.0"
 
 dependencies:
   flutter:
