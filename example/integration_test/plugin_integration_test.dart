@@ -17,6 +17,6 @@ void main() {
   testWidgets('scanMedia test', (WidgetTester tester) async {
     final ScanMedia plugin = ScanMedia();
 
-    expect(() async => await plugin.scanMedia('/valid/path'), returnsNormally);
+    expect(() async => await plugin.scan('/valid/path'), returnsNormally);
   });
 }

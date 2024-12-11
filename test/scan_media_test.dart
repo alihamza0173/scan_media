@@ -36,8 +36,8 @@ void main() {
     ScanMediaPlatform.instance = fakePlatform;
 
     // Expect the method to complete without throwing an error
-    expect(() async => await scanMediaPlugin.scanMedia('/valid/path'),
-        returnsNormally);
+    expect(
+        () async => await scanMediaPlugin.scan('/valid/path'), returnsNormally);
   });
 
   test('scanMedia throws an error for invalid path', () async {
@@ -46,7 +46,7 @@ void main() {
     ScanMediaPlatform.instance = errorPlatform;
 
     // Expect the method to throw an error
-    expect(() async => await scanMediaPlugin.scanMedia('/invalid/path'),
+    expect(() async => await scanMediaPlugin.scan('/invalid/path'),
         throwsException);
   });
 }

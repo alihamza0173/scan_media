@@ -8,6 +8,11 @@
 import 'src/scan_media_platform_interface.dart';
 
 class ScanMedia {
+  Future<void> scan(String path) {
+    return ScanMediaPlatform.instance.loadMedia(path);
+  }
+
+  @Deprecated('Use [scan] instead. This method will be removed in the future.')
   Future<void> scanMedia(String path) {
     return ScanMediaPlatform.instance.loadMedia(path);
   }
