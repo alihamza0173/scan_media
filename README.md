@@ -17,7 +17,7 @@ To use the `scan_media` plugin, add it to your `pubspec.yaml` file:
   scan_media:
     git:
       url: https://github.com/alihamza0173/scan_media
-      ref: main
+      ref: master
 ``` 
 
 Then, run the following command to fetch the package:

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:flutter/services.dart';
+import 'package:scan_media/scan_media.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,10 +29,18 @@ class _MyAppState extends State<MyApp> {
     String platformVersion;
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
+    platformVersion = 'Unknown platform version';
+
     try {
-      platformVersion = 'Unknown platform version';
+      ScanMedia().scan('path');
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
+    } catch (e) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text('Error: $e'),
+        ),
+      );
     }
 
     // If the widget was removed from the tree while the asynchronous platform
